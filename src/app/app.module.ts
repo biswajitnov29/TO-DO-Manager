@@ -22,6 +22,9 @@ import { AuthResolveService } from './services/auth-resolve.service';
 import { ToastService } from './services/toast.service';
 import { ReversePipe } from './filters/reverse.pipe';
 
+import { ModalModule } from 'ngx-bootstrap';
+import { MenuComponent } from './components/menu/menu.component';
+
 const routes: Routes = [
     { 
         path: '', 
@@ -40,6 +43,12 @@ const routes: Routes = [
         resolve: {
           data: AuthResolveService
         }
+    },{
+      path: 'tasklist',
+      component: TaskListsComponent,
+        resolve: {
+          data: AuthResolveService
+        }
     },
     {
       path: 'login',
@@ -55,14 +64,16 @@ const routes: Routes = [
     TaskListsComponent,
     ToastMessagesComponent,
     ReversePipe,
-    DefaultTasksComponent
+    DefaultTasksComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
       CommonModule,
       HttpModule,
       FormsModule,
-      RouterModule.forRoot(routes)
+      RouterModule.forRoot(routes),
+      ModalModule.forRoot()
   ],
   providers: [
       AppService,

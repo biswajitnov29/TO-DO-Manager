@@ -11,10 +11,34 @@
     font-size: 20px;
     cursor: pointer;
 }
+.checkbox-custom{
+    display: none;
+}
+.checkbox-custom-label{
+    margin: 0px;
+}
+.checkbox-custom + .checkbox-custom-label:before {
+    content: "\f096";
+    font-family: 'FontAwesome';
+    margin: 0px;
+}
 
+.checkbox-custom:checked + .checkbox-custom-label:before {
+    content: "\f14a";
+    font-family: 'FontAwesome';
+    margin: 0px;
+}
+
+.w100{
+    width: 100%;
+}
+.w90{
+    width: 90%;
+}
 input.addTaskInput{
     border: 0px;
     border-bottom: 1px solid #343a40;
+    background-color: transparent;
 }
 input.addTaskInput:focus {
     outline-width: 0;
