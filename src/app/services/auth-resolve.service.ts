@@ -14,7 +14,6 @@ export class AuthResolveService implements Resolve<any> {
         return this.authService.isSignedIn().then((isSignedIn)=>{
           if(!isSignedIn){
               this.router.navigate(['login']);
-              
           }
       });
 

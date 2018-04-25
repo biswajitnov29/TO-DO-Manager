@@ -13,6 +13,8 @@ export class DefaultTasksComponent implements OnInit {
     tasks:any[]=[];
     pendingTasks:any[]=[];
     completedTasks:any[]=[];
+    addTaskEditMode:boolean=false;
+    addTaskText:string="";
   constructor(private cdr:ChangeDetectorRef,
                private taskListService:TaskListService,
               private taskService:TaskService) { }
@@ -20,6 +22,10 @@ export class DefaultTasksComponent implements OnInit {
   ngOnInit() {
       this.getFirstTaskList();
   }
+    
+    focusOutAddTask(){
+        this.addTaskEditMode=false;
+    }
     
     getFirstTaskList(){
         this.taskListService.get().then((response:any)=>{

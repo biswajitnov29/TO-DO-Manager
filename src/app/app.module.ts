@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import { HttpModule } from "@angular/http";
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { TasksComponent } from './components/tasks/tasks.component';
@@ -59,6 +61,7 @@ const routes: Routes = [
     BrowserModule,
       CommonModule,
       HttpModule,
+      FormsModule,
       RouterModule.forRoot(routes)
   ],
   providers: [
