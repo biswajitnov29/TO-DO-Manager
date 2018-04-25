@@ -1,28 +1,44 @@
+<p (click)="toggle('pendingCollapse')" class="taskListHeader">
 
 
 
-
-<p (click)="toggle('pendingCollapse')" class="taskListHeader">Pending</p>
+    Pending Tasks</p>
 <div class="" id="pendingCollapse">
-  <div class="card task-card border-warning" *ngFor="let task of tasks">
-  <div class="card-body">
-    <h5 class="card-title">{{task.title}}</h5>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
+    <div class="card task-card text-white bg-dark" *ngFor="let task of pendingTasks">
+        <div class="card-body">
+            <div class="pull-right">
+                <a href="#" class="card-link" style="color: white;">
+        <i class="fa fa-edit"></i>
+      </a>
+                <a href="#" class="card-link" style="color: white;">
+        <i class="fa fa-trash"></i>
+      </a>
+            </div>
+            <h5 class="card-title">{{task.title}}</h5>
+            <p class="card-text">
+                <small class="text-muted">Last updated {{getDiferenceInDays(task.updated)}}</small>
+            </p>
+        </div>
+    </div>
 </div>
 
 
-<p (click)="toggle('completedCollapse')" class="taskListHeader">Completed</p>
+<p (click)="toggle('completedCollapse')" class="taskListHeader">Completed Tasks</p>
 <div class="collapse" id="completedCollapse">
-  <div class="card task-card border-success" *ngFor="let task of tasks">
-  <div class="card-body">
-    <h5 class="card-title">{{task.title}}</h5>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
+    <div class="card task-card text-white bg-success" *ngFor="let task of completedTasks">
+        <div class="card-body">
+            <div class="pull-right">
+                <a href="#" class="card-link" style="color: white;">
+        <i class="fa fa-edit"></i>
+      </a>
+                <a href="#" class="card-link" style="color: white;">
+        <i class="fa fa-trash"></i>
+      </a>
+            </div>
+            <h5 class="card-title">{{task.title}}</h5>
+            <p class="card-text">
+                <small class="text-muted" style="color: white;">Last updated {{getDiferenceInDays(task.updated)}}</small>
+            </p>
+        </div>
+    </div>
 </div>

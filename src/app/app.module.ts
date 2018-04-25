@@ -21,26 +21,28 @@ import { ToastService } from './services/toast.service';
 import { ReversePipe } from './filters/reverse.pipe';
 
 const routes: Routes = [
-  {
-      path: '',
+    { 
+        path: '', 
+        redirectTo: '/login', 
+        pathMatch: 'full'
+    },
+    {
+      path: 'home',
       component: DefaultTasksComponent,
-      resolve: {
+        resolve: {
           data: AuthResolveService
-      },
-  },{
+        }
+    },{
       path: 'tasklist/:id/tasks',
       component: TasksComponent,
-      resolve: {
+        resolve: {
           data: AuthResolveService
-      },
-  },
-  {
+        }
+    },
+    {
       path: 'login',
-      component: LoginComponent,
-      resolve: {
-          data: AuthResolveService
-      },
-  }
+      component: LoginComponent
+    }
 ];
 
 @NgModule({

@@ -1,29 +1,23 @@
 import { Injectable } from '@angular/core';
+import { AuthService } from "./auth.service";
 import {
     Router, Resolve,
     ActivatedRouteSnapshot
 } from '@angular/router';
-import { WindowRefService } from './window-ref.service';
-import { AuthService } from "./auth.service";
 
 @Injectable()
 export class AuthResolveService implements Resolve<any> {
 
-  constructor(private authService: AuthService,
-               private winRef: WindowRefService,
-               private router: Router) { }
+  constructor(private router: Router,private authService: AuthService) { }
     
     resolve(route: ActivatedRouteSnapshot): Promise<any> {
-        return this.authService.isSignedIn().then((data)=>{
-            if(!data){
-                this.authService.signIn().then((data:any)=>{
-                    this.authService.listen((isSignedIn:any)=>{
-                        console.log("isSignedIn = "+isSignedIn);
-                        console.log('Native window obj', this.winRef.nativeWindow.gapi);
-                    });
-                });
-            }
-        });
+        return this.authService.isSignedIn().then((isSignedIn)=>{
+          if(!isSignedIn){
+              this.router.navigate(['login']);
+              
+          }
+      });
+
     }
 
 }
