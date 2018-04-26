@@ -16,6 +16,29 @@ export class TaskListService {
           'path': `${AppConfig.googleTask.SCOPES}/${this.request}${id}`
         });
     }
+    
+    insert(data) {
+        return this.GoogleAPI.request({
+          'path': `${AppConfig.googleTask.SCOPES}/${this.request}`,
+          'method': 'POST',
+          'body': data
+        });
+      };
+    
+    update(data) {
+        return this.GoogleAPI.request({
+          'path': `${AppConfig.googleTask.SCOPES}/${this.request}/${data.id}`,
+          'method': 'PUT',
+          'body': data
+        });
+      };
+    
+    delete = function(id) {
+        return this.GoogleAPI.request({
+          'path': `${AppConfig.googleTask.SCOPES}/${this.request}/${id}`,
+          'method': 'DELETE'
+        });
+      };
 
 
 }

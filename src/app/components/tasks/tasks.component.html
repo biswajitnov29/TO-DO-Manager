@@ -1,8 +1,58 @@
-
-
-<div class="talk-bubble tri-right left-top" *ngFor="let taskList of TaskLists">
-  <div class="talktext">
-    <p>{{taskList.Name}}</p>
-  </div>
+<div class="todoContainer" *ngIf="!loadingFirstTime">
+    <div class="row align-items-center">
+        <div class="col-sm">
+            <div class="row justify-content-center">
+                <div class="col-sm-6" >
+                    <h2 class="ttu tracked2 b f3 mv0 ph4 pv3 bg-gray8 br2 br--top white">{{defaultTaskList.title}}</h2>
+<!--                    <h2 class="ttu tracked2 b f3 mv0 ph4 pv3 bg-gray8 br2 br--top white">TODOs</h2>-->
+                    <article class="fw6 flex flex-row items-center ph3 bg-white mb1">
+                        <i class="svg-inline--fa fa fa-plus fa-w-14 fa-fw fa-lg"></i>
+                        <span class="ml3 bl bw1 b--black-50 pl3 pv3 text-cursor" *ngIf="!addTaskEditMode" (click)="addTaskEditMode=true;focusInput()">Add to do task</span>
+                        <span class="ml3 bl bw1 b--black-50 pl3 pv3 text-cursor w90" [hidden]="!addTaskEditMode">
+                            <input [(ngModel)]="addTaskText" #addInputField
+                                   class="addTaskInput w100" 
+                                   (keyup.enter)="addTask()"
+                                   (focusout)="addTask()">
+                        </span>
+                    </article>
+                    
+                    <article *ngIf="loadingTask"
+                             class="fw6 flex flex-row items-center ph3 br2 br--bottom bg-white-90 mb1">
+                        <app-loader style="width: 100%;"></app-loader>
+                    </article>
+                    <div *ngIf="!loadingTask">
+                    <article class="fw6 flex flex-row items-center ph3 br2 br--bottom bg-white-90 mb1" *ngFor="let task of pendingTasks">
+<!--                        <i class="svg-inline--fa fa far fa-square fa-w-14 fa-fw fa-lg pointer"></i>-->
+                        <input id="check-task-{{task.id}}" 
+                               [(ngModel)]="task.check" (change)="completeTask(task)"
+                               type="checkbox" class="checkbox-custom" />
+                        <label for="check-task-{{task.id}}" class="svg-inline--fa fa-w-14 fa-fw fa-lg pointer checkbox-custom-label"></label>
+                        <span class="ml3 bl bw1 b--black-50 pl3 pv3 text-cursor"
+                              *ngIf="!task.editMode" (click)="task.editMode=true;">{{task.title}}</span>
+                        <span class="ml3 bl bw1 b--black-50 pl3 pv3 text-cursor w90"
+                              *ngIf="task.editMode">
+                            <input [(ngModel)]="task.title" 
+                                   class="addTaskInput w100" 
+                                   (keyup.enter)="editTask(task)" (focusout)="editTask(task)">
+                        </span>
+                        
+                    </article>
+                    <article class="fw6 flex flex-row items-center ph3 bg-white-90 o-50 mb1" *ngFor="let task of completedTasks">
+                        <i class="svg-inline--fa fa fa-trash fa-w-16 fa-fw fa-lg pointer"
+                           (click)="deleteTask(template,task)"></i>
+                        <span class="ml3 bl bw1 b--black-50 pl3 pv3 completed-Task">{{task.title}}</span>
+                    </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<button class="btn btn-info" (click)="addToaster()">Add Toaster</button>
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Do you want to delete the task?</p>
+    <button type="button" class="btn btn-default" (click)="confirmDelete()" >Yes</button>
+    <button type="button" class="btn btn-default" (click)="declineDelete()" >No</button>
+  </div>
+</ng-template>

@@ -1,0 +1,215 @@
+body{
+    background-color: #2980b9 !important;
+}
+
+.task-card{
+    width: 15rem;
+    display: inline-block;
+    margin: 10px;
+    height: 10rem;
+    
+}
+.taskListHeader{
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+    font-size: 20px;
+    cursor: pointer;
+}
+.checkbox-custom{
+    display: none;
+}
+.checkbox-custom-label{
+    margin: 0px;
+}
+.checkbox-custom + .checkbox-custom-label:before {
+    content: "\f096";
+    font-family: 'FontAwesome';
+    margin: 0px;
+}
+
+.checkbox-custom:checked + .checkbox-custom-label:before {
+    content: "\f14a";
+    font-family: 'FontAwesome';
+    margin: 0px;
+}
+
+.w100{
+    width: 100%;
+}
+.w90{
+    width: 90%;
+}
+input.addTaskInput{
+    border: 0px;
+    border-bottom: 1px solid #343a40;
+    background-color: transparent;
+}
+input.addTaskInput:focus {
+    outline-width: 0;
+}
+.completed-Task{
+    text-decoration: line-through;
+}
+.text-cursor{
+    cursor: text;
+}
+.pointer{
+    cursor:pointer;
+}
+.mb1 {
+    margin-bottom: .25rem;
+}
+.ph4 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.ph3 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.pv3 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.todoContainer{
+    width: 100%;
+    font-family: fa5-proxima-nova,Helvetica Neue,Helvetica,Arial,sans-serif;
+    padding: 20px;
+}
+.bg-green{
+    background-color: #1abc9c;
+}
+.bg-gray8 {
+    background-color: #343a40;
+}
+.o-50 {
+    opacity: .5;
+}
+.bg-white-90 {
+    background-color: hsla(0,0%,100%,.9);
+}
+
+.bg-white, .docs-generated table {
+    background-color: #fff;
+}
+.bg-indigo7 {
+    background-color: #4263eb;
+}
+.white {
+    color: #fff;
+}
+.docs-generated h3, .docs-generated h4, .f3 {
+    font-size: 1rem;
+}
+
+
+.docs-generated h1, .docs-generated h2, .docs-generated h3, .docs-generated h4, .fw6 {
+    font-weight: 600;
+}
+.items-center {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.flex-row {
+    -webkit-box-orient: horizontal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.flex-column, .flex-row {
+    -webkit-box-direction: normal;
+}
+.flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.ml3 {
+    margin-left: 1rem;
+}
+.pv3 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.pl3 {
+    padding-left: 1rem;
+}
+.bw1, .docs-generated h4 {
+    border-width: .125rem;
+}
+.b--black-50 {
+    border-color: rgba(0,0,0,.5);
+}
+.bl, .docs-generated table th {
+    border-left-style: solid;
+    border-left-width: 1px;
+}
+svg:not(:root).svg-inline--fa {
+    overflow: visible;
+}
+
+svg:not(:root).svg-inline--fa {
+    overflow: visible;
+}
+.svg-inline--fa.fa-fw {
+    width: 1.25em;
+}
+.svg-inline--fa.fa-w-16 {
+    width: 1em;
+}
+.svg-inline--fa.fa-lg {
+    vertical-align: -.225em;
+}
+.svg-inline--fa.fa-fw {
+    width: 1.25em;
+}
+.svg-inline--fa.fa-w-16 {
+    width: 1.25em;
+}
+.svg-inline--fa.fa-lg {
+    vertical-align: -.225em;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+.fa-fw {
+    text-align: center;
+    width: 1.25em;
+}
+.fa-lg {
+    font-size: 1.33333em;
+    line-height: .75em;
+    vertical-align: -.0667em;
+}
+.fa-fw {
+    text-align: center;
+    width: 1.25em;
+}
+.fa-lg {
+    font-size: 1.33333em;
+    line-height: 0.75em;
+    vertical-align: -.0667em;
+}
+.svg-inline--fa {
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -.125em;
+}
+.fa-fw {
+    text-align: center;
+    width: 1.25em;
+}
+.fa-lg {
+    font-size: 1.33333em;
+    line-height: 0.75em;
+    vertical-align: -.0667em;
+}
+.svg-inline--fa {
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -.125em;
+}

@@ -36,7 +36,5 @@ export class AppComponent implements OnInit {
         $('#myNav').css("width","100%");
     }
     
-    closeNav():void{
-        $('#myNav').css("width","0%");
-    }
+    
 }

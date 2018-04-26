@@ -1,3 +1,51 @@
-<p>
-  task-lists works!
-</p>
+
+
+<div class="todoContainer">
+    <div class="row align-items-center">
+        <div class="col-sm">
+            <div class="row justify-content-center">
+                <div class="col-sm-6" >
+                    <h2 class="ttu tracked2 b f3 mv0 ph4 pv3 bg-gray8 br2 br--top white">TODO Catagories</h2>
+                    <article class="fw6 flex flex-row items-center ph3 bg-white mb1">
+                        <i class="svg-inline--fa fa fa-plus fa-w-14 fa-fw fa-lg"></i>
+                        <span class="ml3 bl bw1 b--black-50 pl3 pv3 text-cursor" *ngIf="!addTaskEditMode" (click)="addTaskEditMode=true;focusInput();">Add task catagory</span>
+                        <span class="ml3 bl bw1 b--black-50 pl3 pv3 text-cursor w90" *ngIf="addTaskEditMode">
+                    <input [(ngModel)]="addTaskCatagoryText" #addInputField
+                           class="addTaskInput w100" 
+                           (keyup.enter)="addTaskCatagory()"
+                           (focusout)="addTaskCatagory()">
+                </span>
+                    </article>
+                    <article *ngIf="loadingTask"
+                             class="fw6 flex flex-row items-center ph3 br2 br--bottom bg-white-90 mb1">
+                        <app-loader style="width: 100%;"></app-loader>
+                    </article>
+                    <div *ngIf="!loadingTask">
+                    
+                    <article class="fw6 flex flex-row items-center ph3 br2 br--bottom bg-white-90 mb1" *ngFor="let task of taskLists">
+                        <i class="svg-inline--fa fa fa-trash fa-w-16 fa-fw fa-lg pointer"
+                           (click)="deleteTask(template,task)"></i>
+                        <span class="ml3 bl bw1 b--black-50 pl3 pv3 text-cursor w90"
+                              *ngIf="!task.editMode" (click)="task.editMode=true;">{{task.title}}</span>
+                        <i *ngIf="!task.editMode" class="fa fa-tasks" (click)="redirectToTask(task)"></i>
+                        <span class="ml3 bl bw1 b--black-50 pl3 pv3 text-cursor w90"
+                              *ngIf="task.editMode">
+                            <input [(ngModel)]="task.title" 
+                                   class="addTaskInput w100" 
+                                   (keyup.enter)="editTaskCatagory(task)" (focusout)="editTaskCatagory(task)">
+                        </span>
+                    </article>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Do you want to delete the task?</p>
+    <button type="button" class="btn btn-default" (click)="confirmDelete()" >Yes</button>
+    <button type="button" class="btn btn-default" (click)="declineDelete()" >No</button>
+  </div>
+</ng-template>

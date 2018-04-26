@@ -1,246 +1,215 @@
-.talk-bubble {
-	margin: 10px 40px;
-  display: inline-block;
-  position: relative;
-	width: auto;
-	height: auto;
-	background-color: lightyellow;
-}
-.border{
-  border: 8px solid #666;
-}
-.round{
-  border-radius: 30px;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
 
+body{
+    background-color: #1abc9c;
 }
-
-/* Right triangle placed top left flush. */
-.tri-right.border.left-top:before {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: -40px;
-	right: auto;
-  top: -8px;
-	bottom: auto;
-	border: 32px solid;
-	border-color: #666 transparent transparent transparent;
+.task-card{
+    width: 15rem;
+    display: inline-block;
+    margin: 10px;
+    height: 10rem;
+    
 }
-.tri-right.left-top:after{
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: -20px;
-	right: auto;
-  top: 0px;
-	bottom: auto;
-	border: 22px solid;
-	border-color: lightyellow transparent transparent transparent;
+.taskListHeader{
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+    font-size: 20px;
+    cursor: pointer;
+}
+.checkbox-custom{
+    display: none;
+}
+.checkbox-custom-label{
+    margin: 0px;
+}
+.checkbox-custom + .checkbox-custom-label:before {
+    content: "\f096";
+    font-family: 'FontAwesome';
+    margin: 0px;
 }
 
-/* Right triangle, left side slightly down */
-.tri-right.border.left-in:before {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: -40px;
-	right: auto;
-  top: 30px;
-	bottom: auto;
-	border: 20px solid;
-	border-color: #666 #666 transparent transparent;
-}
-.tri-right.left-in:after{
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: -20px;
-	right: auto;
-  top: 38px;
-	bottom: auto;
-	border: 12px solid;
-	border-color: lightyellow lightyellow transparent transparent;
+.checkbox-custom:checked + .checkbox-custom-label:before {
+    content: "\f14a";
+    font-family: 'FontAwesome';
+    margin: 0px;
 }
 
-/*Right triangle, placed bottom left side slightly in*/
-.tri-right.border.btm-left:before {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-	left: -8px;
-  right: auto;
-  top: auto;
-	bottom: -40px;
-	border: 32px solid;
-	border-color: transparent transparent transparent #666;
+.w100{
+    width: 100%;
 }
-.tri-right.btm-left:after{
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-	left: 0px;
-  right: auto;
-  top: auto;
-	bottom: -20px;
-	border: 22px solid;
-	border-color: transparent transparent transparent lightyellow;
+.w90{
+    width: 90%;
 }
-
-/*Right triangle, placed bottom left side slightly in*/
-.tri-right.border.btm-left-in:before {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-	left: 30px;
-  right: auto;
-  top: auto;
-	bottom: -40px;
-	border: 20px solid;
-	border-color: #666 transparent transparent #666;
+input.addTaskInput{
+    border: 0px;
+    border-bottom: 1px solid #343a40;
+    background-color: transparent;
 }
-.tri-right.btm-left-in:after{
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-	left: 38px;
-  right: auto;
-  top: auto;
-	bottom: -20px;
-	border: 12px solid;
-	border-color: lightyellow transparent transparent lightyellow;
+input.addTaskInput:focus {
+    outline-width: 0;
 }
-
-/*Right triangle, placed bottom right side slightly in*/
-.tri-right.border.btm-right-in:before {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: auto;
-	right: 30px;
-	bottom: -40px;
-	border: 20px solid;
-	border-color: #666 #666 transparent transparent;
+.completed-Task{
+    text-decoration: line-through;
 }
-.tri-right.btm-right-in:after{
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: auto;
-	right: 38px;
-	bottom: -20px;
-	border: 12px solid;
-	border-color: lightyellow lightyellow transparent transparent;
+.text-cursor{
+    cursor: text;
 }
-/*
-	left: -8px;
-  right: auto;
-  top: auto;
-	bottom: -40px;
-	border: 32px solid;
-	border-color: transparent transparent transparent #666;
-	left: 0px;
-  right: auto;
-  top: auto;
-	bottom: -20px;
-	border: 22px solid;
-	border-color: transparent transparent transparent lightyellow;
-
-/*Right triangle, placed bottom right side slightly in*/
-.tri-right.border.btm-right:before {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: auto;
-	right: -8px;
-	bottom: -40px;
-	border: 20px solid;
-	border-color: #666 #666 transparent transparent;
+.pointer{
+    cursor:pointer;
 }
-.tri-right.btm-right:after{
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: auto;
-	right: 0px;
-	bottom: -20px;
-	border: 12px solid;
-	border-color: lightyellow lightyellow transparent transparent;
+.mb1 {
+    margin-bottom: .25rem;
+}
+.ph4 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.ph3 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.pv3 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.todoContainer{
+    width: 100%;
+    font-family: fa5-proxima-nova,Helvetica Neue,Helvetica,Arial,sans-serif;
+    padding: 20px;
+}
+.bg-green{
+    background-color: #1abc9c;
+}
+.bg-gray8 {
+    background-color: #343a40;
+}
+.o-50 {
+    opacity: .5;
+}
+.bg-white-90 {
+    background-color: hsla(0,0%,100%,.9);
 }
 
-/* Right triangle, right side slightly down*/
-.tri-right.border.right-in:before {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: auto;
-	right: -40px;
-  top: 30px;
-	bottom: auto;
-	border: 20px solid;
-	border-color: #666 transparent transparent #666;
+.bg-white, .docs-generated table {
+    background-color: #fff;
 }
-.tri-right.right-in:after{
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: auto;
-	right: -20px;
-  top: 38px;
-	bottom: auto;
-	border: 12px solid;
-	border-color: lightyellow transparent transparent lightyellow;
+.bg-indigo7 {
+    background-color: #4263eb;
+}
+.white {
+    color: #fff;
+}
+.docs-generated h3, .docs-generated h4, .f3 {
+    font-size: 1rem;
 }
 
-/* Right triangle placed top right flush. */
-.tri-right.border.right-top:before {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: auto;
-	right: -40px;
-  top: -8px;
-	bottom: auto;
-	border: 32px solid;
-	border-color: #666 transparent transparent transparent;
+
+.docs-generated h1, .docs-generated h2, .docs-generated h3, .docs-generated h4, .fw6 {
+    font-weight: 600;
 }
-.tri-right.right-top:after{
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-  left: auto;
-	right: -20px;
-  top: 0px;
-	bottom: auto;
-	border: 20px solid;
-	border-color: lightyellow transparent transparent transparent;
+.items-center {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.flex-row {
+    -webkit-box-orient: horizontal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.flex-column, .flex-row {
+    -webkit-box-direction: normal;
+}
+.flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.ml3 {
+    margin-left: 1rem;
+}
+.pv3 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.pl3 {
+    padding-left: 1rem;
+}
+.bw1, .docs-generated h4 {
+    border-width: .125rem;
+}
+.b--black-50 {
+    border-color: rgba(0,0,0,.5);
+}
+.bl, .docs-generated table th {
+    border-left-style: solid;
+    border-left-width: 1px;
+}
+svg:not(:root).svg-inline--fa {
+    overflow: visible;
 }
 
-/* talk bubble contents */
-.talktext{
-  padding: 1em;
-	text-align: left;
-  line-height: 1.5em;
+svg:not(:root).svg-inline--fa {
+    overflow: visible;
 }
-.talktext p{
-  /* remove webkit p margins */
-  -webkit-margin-before: 0em;
-  -webkit-margin-after: 0em;
+.svg-inline--fa.fa-fw {
+    width: 1.25em;
+}
+.svg-inline--fa.fa-w-16 {
+    width: 1em;
+}
+.svg-inline--fa.fa-lg {
+    vertical-align: -.225em;
+}
+.svg-inline--fa.fa-fw {
+    width: 1.25em;
+}
+.svg-inline--fa.fa-w-16 {
+    width: 1.25em;
+}
+.svg-inline--fa.fa-lg {
+    vertical-align: -.225em;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+.fa-fw {
+    text-align: center;
+    width: 1.25em;
+}
+.fa-lg {
+    font-size: 1.33333em;
+    line-height: .75em;
+    vertical-align: -.0667em;
+}
+.fa-fw {
+    text-align: center;
+    width: 1.25em;
+}
+.fa-lg {
+    font-size: 1.33333em;
+    line-height: 0.75em;
+    vertical-align: -.0667em;
+}
+.svg-inline--fa {
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -.125em;
+}
+.fa-fw {
+    text-align: center;
+    width: 1.25em;
+}
+.fa-lg {
+    font-size: 1.33333em;
+    line-height: 0.75em;
+    vertical-align: -.0667em;
+}
+.svg-inline--fa {
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -.125em;
 }

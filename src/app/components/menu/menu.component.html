@@ -1,3 +1,12 @@
-<p>
-  menu works!
-</p>
+<div id="myNav" class="overlay">
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+
+    
+    <!-- Overlay content -->
+    <div class="overlay-content">
+        <span (click)="redirectHome()">Home</span>
+        <span (click)="redirectTaskList()">Task Lists</span>
+    </div>
+</div>

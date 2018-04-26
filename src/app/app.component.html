@@ -5,31 +5,13 @@
         </div>
     </div>
 <!-- The overlay -->
-<div id="myNav" class="overlay">
-
-    <!-- Button to close the overlay navigation -->
-    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
-
-    
-    <!-- Overlay content -->
-    <div class="overlay-content">
-        <a [routerLink]="['home']">Home</a>
-        <a [routerLink]="['tasklist']">Task Lists</a>
-    </div>
-</div>
 
 
+<app-menu></app-menu>
 <!-- Use any element to open/show the overlay navigation menu -->
 <div class="container-fluid">
-<!--
-    <nav class="">
-        <span (click)="openNav()">open</span>
-    </nav>
--->
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: transparent !important;">
         <i class="fa fa-bars fa-2x" (click)="openNav()"></i>
-<!--        <span class="navbar-toggler-icon" (click)="openNav()"></span>-->
-<!--        <a class="navbar-brand" style="margin-left: :10px;" href="#">To-Do-Tasks</a>-->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
 <!--
@@ -43,6 +25,4 @@
     <div class="container-fluid">
         <router-outlet></router-outlet>
     </div>
-    
-    <app-toast-messages></app-toast-messages>
 </div>

@@ -9,8 +9,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { TaskListsComponent } from './components/task-lists/task-lists.component';
-import { ToastMessagesComponent } from './components/toast-messages/toast-messages.component';
-import { DefaultTasksComponent } from './components/default-tasks/default-tasks.component';
 
 import { AppService } from './services/app.service';
 import { TaskService } from './services/task.service';
@@ -20,10 +18,10 @@ import { GoogleApiService } from './services/google-api.service';
 import { AuthService } from "./services/auth.service";
 import { AuthResolveService } from './services/auth-resolve.service';
 import { ToastService } from './services/toast.service';
-import { ReversePipe } from './filters/reverse.pipe';
 
 import { ModalModule } from 'ngx-bootstrap';
 import { MenuComponent } from './components/menu/menu.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 const routes: Routes = [
     { 
@@ -33,7 +31,7 @@ const routes: Routes = [
     },
     {
       path: 'home',
-      component: DefaultTasksComponent,
+      component: TasksComponent,
         resolve: {
           data: AuthResolveService
         }
@@ -62,10 +60,8 @@ const routes: Routes = [
     LoginComponent,
     TasksComponent,
     TaskListsComponent,
-    ToastMessagesComponent,
-    ReversePipe,
-    DefaultTasksComponent,
-    MenuComponent
+    MenuComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
