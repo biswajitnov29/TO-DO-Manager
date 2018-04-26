@@ -23,8 +23,6 @@ import { ModalModule } from 'ngx-bootstrap';
 import { MenuComponent } from './components/menu/menu.component';
 import { LoaderComponent } from './components/loader/loader.component';
 
-import{ ReversePipe } from './filters/reverse.pipe'
-
 const routes: Routes = [
     { 
         path: '', 
@@ -63,8 +61,7 @@ const routes: Routes = [
     TasksComponent,
     TaskListsComponent,
     MenuComponent,
-    LoaderComponent,
-      ReversePipe
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
