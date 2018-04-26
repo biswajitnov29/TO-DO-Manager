@@ -8,17 +8,17 @@ Install [Nodejs](https://nodejs.org) in your system.
 
 ## Configure Application
 
-Open `command prompt` or `node command prompt`,
+Step 1: Open `command prompt` or `node command prompt`,
 
-Check `node` version (run command `node --version`),
+Step 2: Check `node` version (run `node --version`),
 
-Check `npm` version (run command `npm --version`),
+Step 3: Check `npm` version (run `npm --version`),
 
-Navigate to application folder,
+Step 4: Navigate to application folder,
 
-Run `npm install` to install all packages,
+Step 5: Run `npm install` to install all packages,
 
-Then, check `Angular CLI` version by running `ng --version`(If `ng` not found as command,please run `npm install @angular/cli -g` to install `Angular CLi` globally),
+Step 6: Then, check `Angular CLI` version by running `ng --version`(If `ng` not found as command,please run `npm install @angular/cli -g` to install `Angular CLI` globally),
 
 Now, your project is set it up to use.
 
