@@ -4,15 +4,15 @@ Manage you task without any hassel.
 
 ## Prerequisite
 
-Install [Node](https://nodejs.org) in your system.
+Install [Nodejs](https://nodejs.org) in your system.
 
 ## Configure Application
 
 Open `command prompt` or `node command prompt`,
 
-Check `node` version,
+Check `node` version (run command `node --version`),
 
-Check `npm` version,
+Check `npm` version (run command `npm --version`),
 
 Navigate to application folder,
 
@@ -33,8 +33,9 @@ This project was generated with :
 
 1. [Angular](https://angular.io/),
 2. [Angular CLI](https://github.com/angular/angular-cli),
-3. [Ngx-bootstrap](https://valor-software.com/ngx-bootstrap/#/),
-4. Google API -- Google task api,
-5. [Font-awasome](https://fontawesome.com/?from=io)
+3. [Bootstrap](https://getbootstrap.com/),
+4. [Ngx-bootstrap](https://valor-software.com/ngx-bootstrap/#/),
+5. Google API -- Google task api,
+6. [Font-awasome](https://fontawesome.com/?from=io)
 
 
