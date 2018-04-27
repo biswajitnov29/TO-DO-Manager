@@ -8,6 +8,7 @@ import {
     Router, Resolve,Event,ActivatedRoute,
     ActivatedRouteSnapshot,NavigationStart
 } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-tasks',
@@ -47,12 +48,12 @@ export class TasksComponent implements OnInit {
               };
               this.taskCatagoryExist=true;
           }
-          
+          this.getFirstTaskList();
       }); 
   }
 
   ngOnInit() {
-      this.getFirstTaskList();
+      //this.getFirstTaskList();
   }
     
     addTask(){
@@ -126,6 +127,17 @@ export class TasksComponent implements OnInit {
         });
     }
 
+    openNav() {
+        $("#mySidenav").css("width","350px");
+        //$(".todoContainer").css("margin-left","250px");
+        //$(".todoContainer").css("opacity","0.4");
+}
+
+ closeNav() {
+    $("#mySidenav").css("width","0px");
+    //$(".todoContainer").css("margin-left","0px");
+    //$(".todoContainer").css("opacity","1");
+}
     toggle(id){
         $('#'+id).toggle();
     }

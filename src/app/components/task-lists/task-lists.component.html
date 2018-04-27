@@ -2,11 +2,11 @@
     <div class="row align-items-center">
         <div class="col-sm">
             <div class="row justify-content-center">
-                <div class="col-sm-6" >
+                <div class="col-sm" >
                     <h2 class="ttu tracked2 b f3 mv0 ph4 pv3 bg-gray8 br2 br--top white">TODO Catagories</h2>
                     <article class="fw6 flex flex-row items-center ph3 bg-white mb1">
-                        <i class="svg-inline--fa fa fa-plus fa-w-14 fa-fw fa-lg"></i>
-                        <span class="ml3 bl bw1 b--black-50 pl3 pv3 text-cursor" *ngIf="!addTaskEditMode" (click)="addTaskEditMode=true;focusInput();">Add task catagory</span>
+                        <i class="svg-inline--fa fa fa-plus fa-w-15 fa-fw fa-lg"></i>
+                        <span class="ml3 bl bw1 b--black-50 pl3 pv3 text-cursor" *ngIf="!addTaskEditMode" (click)="addTaskEditMode=true;focusInput();">Add to do catagory</span>
                         <span class="ml3 bl bw1 b--black-50 pl3 pv3 text-cursor w90" *ngIf="addTaskEditMode">
                     <input [(ngModel)]="addTaskCatagoryText" #addInputField
                            class="addTaskInput w100" 
@@ -23,7 +23,7 @@
                     <article class="fw6 flex flex-row items-center ph3 br2 br--bottom bg-white-90 mb1" *ngFor="let task of taskLists">
                         <i class="svg-inline--fa fa fa-trash fa-w-16 fa-fw fa-lg pointer"
                            (click)="deleteTask(template,task)"></i>
-                        <span class="ml3 bl bw1 b--black-50 pl3 pv3 text-cursor w90"
+                        <span class="ml3 bl bw1 b--black-50 pl3 pv3 text-cursor w90 fontWeight400" 
                               *ngIf="!task.editMode" (click)="task.editMode=true;">{{task.title}}</span>
                         <i *ngIf="!task.editMode" class="fa fa-tasks" (click)="redirectToTask(task)"></i>
                         <span class="ml3 bl bw1 b--black-50 pl3 pv3 text-cursor w90"

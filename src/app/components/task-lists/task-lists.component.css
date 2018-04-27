@@ -32,7 +32,9 @@ body{
     font-family: 'FontAwesome';
     margin: 0px;
 }
-
+.fontWeight400{
+    font-weight: 400 !important;
+}
 .w100{
     width: 100%;
 }
@@ -165,6 +167,9 @@ svg:not(:root).svg-inline--fa {
 }
 .svg-inline--fa.fa-w-16 {
     width: 1.25em;
+}
+.svg-inline--fa.fa-w-15 {
+    width: 1.1em;
 }
 .svg-inline--fa.fa-lg {
     vertical-align: -.225em;

@@ -80,4 +80,6 @@ body{
         right: 35px;
     }
 }
-
+.fontWeight400{
+    font-weight: 400 !important;
+}

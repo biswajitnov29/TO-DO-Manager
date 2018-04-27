@@ -42,17 +42,21 @@ export class TaskListsComponent implements OnInit {
   }
     
     addTaskCatagory(){
-        if(!this.crudOperationInProgress){
+        if(this.addTaskCatagoryText.length>0){
+            if(!this.crudOperationInProgress){
+                this.addTaskEditMode=false;
+                this.crudOperationInProgress=true;
+                this.loadingTask=true;
+                var data={
+                    title:this.addTaskCatagoryText
+                };
+                this.taskListService.insert(data).then((response:any)=>{
+                    this.crudOperationInProgress=false;
+                    this.getTaskCatagoryList()
+                });
+            }
+        }else{
             this.addTaskEditMode=false;
-            this.crudOperationInProgress=true;
-            this.loadingTask=true;
-            var data={
-                title:this.addTaskCatagoryText
-            };
-            this.taskListService.insert(data).then((response:any)=>{
-                this.crudOperationInProgress=false;
-                this.getTaskCatagoryList()
-            });
         }
     }
     

@@ -1,3 +1,15 @@
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <app-task-lists></app-task-lists>
+</div>
+<div style="padding-top: 20px;">
+    <span style="font-size: 20px;cursor:pointer;" (click)="openNav()">
+        <i class="fa fa-arrow-left"></i>
+        <span style="font-size: 18px;">To Do Catagories</span>
+    </span>
+</div>
+
 <div class="todoContainer" *ngIf="!loadingFirstTime">
     <div class="row align-items-center">
         <div class="col-sm">
@@ -27,8 +39,14 @@
                                [(ngModel)]="task.check" (change)="completeTask(task)"
                                type="checkbox" class="checkbox-custom" />
                         <label for="check-task-{{task.id}}" class="svg-inline--fa fa-w-14 fa-fw fa-lg pointer checkbox-custom-label"></label>
-                        <span class="ml3 bl bw1 b--black-50 pl3 pv3 text-cursor"
-                              *ngIf="!task.editMode" (click)="task.editMode=true;">{{task.title}}</span>
+                        <span class="ml3 bl bw1 b--black-50 pl3 pv3 text-cursor w90"
+                              *ngIf="!task.editMode" (click)="task.editMode=true;">
+                            <div class="text-cursor fontWeight400">{{task.title}}</div>
+                            
+                            <div class="card-text text-cursor">
+                                <small class="text-muted">{{task.due | date}}</small>
+                            </div>
+                        </span>
                         <span class="ml3 bl bw1 b--black-50 pl3 pv3 text-cursor w90"
                               *ngIf="task.editMode">
                             <input [(ngModel)]="task.title" 
@@ -40,7 +58,7 @@
                     <article class="fw6 flex flex-row items-center ph3 bg-white-90 o-50 mb1" *ngFor="let task of completedTasks">
                         <i class="svg-inline--fa fa fa-trash fa-w-16 fa-fw fa-lg pointer"
                            (click)="deleteTask(template,task)"></i>
-                        <span class="ml3 bl bw1 b--black-50 pl3 pv3 completed-Task">{{task.title}}</span>
+                        <span class="ml3 bl bw1 b--black-50 pl3 pv3 completed-Task fontWeight400">{{task.title}}</span>
                     </article>
                     </div>
                 </div>
